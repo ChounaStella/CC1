@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculatrice</h1>
+
+    <p>
+        premier nombre:<input type="text" id="premiernombre" name="premiernombre"/>
+    </p>
+    <p>
+        + <input type="radio" id="r1" name="r" checked/>
+        - <input type="radio" id="r2" name="r"/>
+        * <input type="radio" id="r3" name="r"/>
+        / <input type="radio" id="r4" name="r"/>
+    </p>
+    <p>
+        second nombre:<input type="text" id="secondnombre" name="secondnombre"/>
+    </p>
+    <p>
+            <input type="submit" onclick="calculer()" id="valider" name="valider" value="valider"/>
+    </p>
+    <h2>Resultat</h2>
+    <div id="afficher"></div>
+
+
+    <script type="text/javascript" src="script.js"></script>
+    <script>
+    
+    function calculer(){
+         var capture1 = parseInt(document.getElementById('premier nombre').value);
+         var capture2 = parseInt(document.getElementById('secondnombre').value);
+
+         if(document.getElementById('r1').checked){
+
+             var addition = capture1 + capture2;
+
+             document.getElementById('afficher').innerHTML = addition;
+         }
+        else if(document.getElementById('r2').checked){
+
+            var soustraction = capture1 - capture2;
+
+            document.getElementById('afficher').innerHTML = soustraction;
+        }
+        else if(document.getElementById('r3').checked){
+
+            var multiplication = capture1 * capture2;
+
+            document.getElementById('afficher').innerHTML = multiplication;
+
+        }
+        else if(document.getElementById('r4').checked){
+
+             var division = capture1 / capture2;
+
+             document.getElementById('afficher').innerHTML = division; 
+
+        }
+        else{
+            document.getElementById('afficher').innerHTML = "veuillez svp cocher les champs manquants";
+
+        }
+       
+       }
+     
+    </script>
+
+    
+</body>
+</html>
